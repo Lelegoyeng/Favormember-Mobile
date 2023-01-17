@@ -2,4 +2,4 @@
 React Native Favor Member 
 
 
-<img src="https://raw.githubusercontent.com/Lelegoyeng/Favormember-Mobile/main/login.png" width="100" height="100">
+<img src="https://raw.githubusercontent.com/Lelegoyeng/Favormember-Mobile/main/login.png" width="200" height="300">
