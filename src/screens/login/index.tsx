@@ -12,7 +12,7 @@ import {
 } from "native-base";
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store";
-import { selectAuth, setAuthData } from "../../store/slices/auth.slice";
+import { PostLogin, selectAuth } from "../../store/slices/auth.slice";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const Login = () => {
@@ -24,47 +24,45 @@ const Login = () => {
 
   const dispatch = useAppDispatch();
 
-  const { data } = useAppSelector(selectAuth);
-
-  useEffect(() => {
-    console.log("data nya", data);
-  }, [data]);
+  const { is_loggedin } = useAppSelector(selectAuth);
 
   const onSubmitHandler = () => {
-    // console.log(email);
-    // console.log(password);
-    const payload = {
-      email,
-      password,
-    };
-    fetch(`https://devapi.thefavored-one.com/member/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    })
-      .then(async (res) => {
-        try {
-          const jsonRes = await res.json();
-          const { message, result } = jsonRes;
-          if (res.status !== 200) {
-            setIsError(true);
-            setMessage(message);
-          } else {
-            setIsError(false);
-            setMessage(message);
-            console.log(jsonRes);
-            dispatch(setAuthData(result));
-          }
-        } catch (err) {
-          console.log(err);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(PostLogin({ email, password }));
   };
+  // console.log(email);
+  // console.log(password);
+  //   const payload = {
+  //     email,
+  //     password,
+  //   };
+  //   fetch(`https://devapi.thefavored-one.com/member/login`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(payload),
+  //   })
+  //     .then(async (res) => {
+  //       try {
+  //         const jsonRes = await res.json();
+  //         const { message, result } = jsonRes;
+  //         if (res.status !== 200) {
+  //           setIsError(true);
+  //           setMessage(message);
+  //         } else {
+  //           setIsError(false);
+  //           setMessage(message);
+  //           console.log(jsonRes);
+  //           // dispatch(setAuthData(result));
+  //         }
+  //       } catch (err) {
+  //         console.log(err);
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   const getMessage = () => {
     return message;

@@ -59,11 +59,11 @@ const TabNavigation = () => {
 };
 
 const Router = () => {
-  const { data } = useAppSelector(selectAuth);
+  const { is_loggedin } = useAppSelector(selectAuth);
 
   return (
     <Stack.Navigator>
-      {!data ? (
+      {!is_loggedin ? (
         <Stack.Screen
           name="Login"
           component={Login}
