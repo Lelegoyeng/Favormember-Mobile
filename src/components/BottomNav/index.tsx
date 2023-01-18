@@ -1,5 +1,7 @@
 import { Box, Center, HStack, Pressable, Text } from "native-base";
 import React from "react";
+import Icons from "react-native-vector-icons/FontAwesome";
+
 // import {
 //   AkunIcon,
 //   HomeIcon,
@@ -10,20 +12,20 @@ import React from "react";
 
 // import HomeIcon from "../../assets/home.svg";
 
-// const Icon = ({ label }: any) => {
-//   switch (label) {
-//     case "Akun":
-//       return <AkunIcon />;
-//     case "Transaksi":
-//       return <TransaksiIcon />;
-//     case "Report":
-//       return <ReportIcon />;
-//     case "Informasi":
-//       return <InformasiIcon />;
-//     default:
-//       return <HomeIcon />;
-//   }
-// };
+const Icon = ({ label }: any) => {
+  switch (label) {
+    case "Akun":
+      return <Icons name="home" size={50} />;
+    case "Transaksi":
+      return <Icons name="home" size={50} />;
+    case "Report":
+      return <Icons name="home" size={50} />;
+    case "Informasi":
+      return <Icons name="home" size={50} />;
+    default:
+      return <Icons name="home" size={50} />;
+  }
+};
 
 const BottomNav = ({ state, descriptors, navigation }: any) => {
   return (

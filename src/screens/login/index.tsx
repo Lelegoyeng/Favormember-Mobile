@@ -13,6 +13,7 @@ import {
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { selectAuth, setAuthData } from "../../store/slices/auth.slice";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -123,13 +124,13 @@ const Login = () => {
               w={"100%"}
               variant="rounded"
               placeholder="Username"
-              defaultValue="0000000000"
+              //defaultValue="0000000000"
               onChangeText={setEmail}
             />
           </HStack>
           <HStack>
             <Input
-              defaultValue="123456"
+              //defaultValue="123456"
               w={"100%"}
               variant="rounded"
               placeholder="Password"
@@ -144,9 +145,10 @@ const Login = () => {
           </HStack>
           <HStack>
             <Button
+              leftIcon={<Icon name="sign-in" size={20}></Icon>}
               w={"100%"}
               onPress={onSubmitHandler}
-              style={{ borderRadius: 75 }}
+              style={{ borderRadius: 75, flex: 1 }}
             >
               Sign
             </Button>
