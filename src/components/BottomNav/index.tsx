@@ -20,7 +20,15 @@ const Icon = ({ label, active }: any) => {
 const BottomNav = ({ state, descriptors, navigation }: any) => {
   return (
     // <Box flex={1} bg="white" safeAreaTop width="100%" alignSelf="center">
-    <HStack bg="#0e0c28" alignItems="center" safeAreaBottom shadow={6}>
+    <HStack
+      bg="#0e0c28"
+      alignItems="center"
+      safeAreaBottom
+      shadow={6}
+      rounded={25}
+      padding={1}
+      margin={2}
+    >
       {state.routes.map((route: any, index: number) => {
         const selected = state.index === index;
         const { options } = descriptors[route.key];

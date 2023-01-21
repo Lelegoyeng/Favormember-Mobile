@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Dashboard, Login } from "../screens";
+import { Dashboard, Login, Transaksi } from "../screens";
 import { useAppSelector } from "../store";
 import { selectAuth } from "../store/slices/auth.slice";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -10,9 +10,9 @@ import BottomNav from "../components/BottomNav";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const Transaksi = () => {
-  return <Text>Halaman Transaksi</Text>;
-};
+// const Transaksi = () => {
+//   return <Text>Halaman Transaksi</Text>;
+// };
 
 const Report = () => {
   return <Text>Halaman Report</Text>;
